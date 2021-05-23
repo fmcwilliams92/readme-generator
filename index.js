@@ -50,10 +50,17 @@ const questions = [
         type: 'input',
         message: "If applicable, provide any tests written for your application and provide examples on how to run them.",
         name: 'tests'
+    },
+    {
+        type: 'list',
+        message: 'Choose a licence for your project!',
+        choices: [],
+        name: 'licence'
     }
 ];
 
-// TODO: Create a function to write README file
+// This is to create the README file
+// const writeFile = () => 'Title: Project Title, Description: project description';
 function writeToFile(fileName, data) {
     fs.writeFile(fileName, data, err => {
         if (err) {
@@ -66,7 +73,7 @@ function writeToFile(fileName, data) {
 
 const writeToFileAsync = util.promisify(writeToFile);
 
-// TODO: Create a function to initialize app
+// TODO: Create a function to initialize app, AKA prompt the questions
 function init() {}
 
 // Function call to initialize app
