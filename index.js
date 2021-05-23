@@ -7,17 +7,50 @@ const generateMarkdown = require('./utils/generateMarkdown.js');
 const questions = [
     {
         type: 'input',
-        name: 'name',
-        message: 'What is the name of your project? (Required)',
-        default: 'readme-generator',
-        validate: nameInput => {
-            if (nameInput < 1 ) {
-            return console.log('Please enter your project name!');
+        name: 'title',
+        message: 'What is the title of your project? (Required)',
+        default: 'Project Title',
+        validate: function(answer) {
+            if (answer < 1 ) {
+            return console.log('Please enter your project Title!');
             } else {
             return true;
             }
         }
     },
+    {
+        type: 'input',
+        name: 'description',
+        message: 'What is the description of your project? (Required)',
+        default: 'Project Description',
+        validate: function(answer) {
+            if (answer < 1 ) {
+            return console.log('Please enter a description of your project!');
+            } else {
+            return true;
+            }
+        }
+    },
+    {
+        type: 'input',
+        message: 'If applicable, please provide any installation instructions for your project.',
+        name: 'instructions'
+    },
+    {
+        type: 'input',
+        message: 'If applicable, please provide any instructions and usage information for your project.',
+        name: 'usage'
+    },
+    {
+        type: 'input',
+        message: 'If applicable, please provide any contribution guidelines for your project.',
+        name: 'contributions'
+    },
+    {
+        type: 'input',
+        message: "If applicable, provide any tests written for your application and provide examples on how to run them.",
+        name: 'tests'
+    }
 ];
 
 // TODO: Create a function to write README file
@@ -26,7 +59,7 @@ function writeToFile(fileName, data) {
         if (err) {
             return console.log(err);
         } else {
-            console.log('Success! Your README,md file has been generated');
+            console.log('Success! Your README.md file has been generated');
         }
     })
 }
