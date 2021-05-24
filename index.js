@@ -9,7 +9,7 @@ const questions = [
     {
         type: 'input',
         name: 'username',
-        message: 'What is your GitHub userame? (Required)',
+        message: 'What is your GitHub username? (Required)',
         default: 'Username',
         validate: function(answer) {
             if (answer < 1 ) {
@@ -110,8 +110,6 @@ function writeToFile(fileName, data) {
         }
     })
 };
-
-const writeToFileAsync = util.promisify(writeToFile);
 
 // TODO: Create a function to initialize app, AKA prompt the questions
 function init() {
