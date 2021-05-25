@@ -3,7 +3,6 @@ const inquirer = require('inquirer');
 const fs = require('fs');
 const generateMarkdown = require('./utils/generateMarkdown.js');
 
-inquirer
 // TODO: Create an array of questions for user input
 const questions = [
     {
@@ -73,7 +72,7 @@ const questions = [
     },
     {
         type: 'input',
-        name: 'userInput',
+        name: 'userAdvise',
         message: 'How can users better your project? (Required)',
         default: 'Advise',
         validate: function(answer) {
@@ -86,7 +85,7 @@ const questions = [
     },
     {
         type: 'list',
-        name: 'licencec',
+        name: 'licence',
         message: 'Choose a licence for your project? (Required)',
         default: 'Licences',
         choices: ['Apache', 'GNU', 'MIT', 'IBM', 'Boost', 'Eclipse'],
